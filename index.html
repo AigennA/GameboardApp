@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Spelplan & Highscores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Spelplan & Highscores</h1>
+            <p>C# → JavaScript — Interaktiv demo</p>
+            <span class="tag">2D-arrayer · Sortering · Tuples</span>
+        </div>
+
+        <div class="sections">
+            <!-- DEL A: Spelplan -->
+            <div class="section">
+                <div class="section-label">DEL A</div>
+                <div class="section-title">Spelplan (3×4)</div>
+                <div class="board-container">
+                    <div class="board" id="board"></div>
+                    <div class="controls">
+                        <button class="btn active" id="btnX" onclick="selectPiece('X')">Placera X</button>
+                        <button class="btn btn-pink" id="btnO" onclick="selectPiece('O')">Placera O</button>
+                        <button class="btn btn-find" onclick="findPiece()">Hitta O</button>
+                        <button class="btn btn-reset" onclick="resetBoard()">Återställ</button>
+                    </div>
+                    <div class="board-info" id="boardInfo">Klicka på en ruta för att placera en pjäs</div>
+                </div>
+            </div>
+
+            <!-- DEL B: Highscores -->
+            <div class="section">
+                <div class="section-label">DEL B</div>
+                <div class="section-title">Highscores</div>
+                <div class="scores-input">
+                    <input type="number" id="scoreInput" placeholder="Ny poäng..." onkeydown="if(event.key==='Enter')addScore()">
+                    <button class="btn" onclick="addScore()">Lägg till</button>
+                    <button class="btn btn-reset" onclick="resetScores()">Återställ</button>
+                </div>
+                <div class="score-list" id="scoreList"></div>
+                <div class="stats-grid" id="statsGrid"></div>
+            </div>
+
+            <!-- Konsol -->
+            <div class="console">
+                <div class="section-label">KONSOL</div>
+                <div class="section-title">Console.WriteLine() output</div>
+                <div class="console-output" id="consoleOutput"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
